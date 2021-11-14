@@ -3,3 +3,12 @@
 ^LICENSE\.md$
 ^README\.Rmd$
 ^cran-comments\.md$
+^codecov\.yml$
+^\.github$
+^node_modules$
+^package-lock\.json$
+^package\.json$
+^$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
