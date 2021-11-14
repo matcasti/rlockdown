@@ -2,5 +2,8 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2021-11-14T20:13Z
+last_built: 2021-11-14T20:23Z
+urls:
+  reference: https://matcasti.github.io/rlockdown//reference
+  article: https://matcasti.github.io/rlockdown//articles
 
