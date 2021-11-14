@@ -1,0 +1,14 @@
+Package: rlockdown
+Title: Password layer for HTML files
+Version: 0.0.0.9000
+Authors@R: 
+    person("Matías", "Castillo Aguilar", , "matcasti@umag.cl", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-7291-247X"))
+Description: Protect standalone static html files using no server-side comunication.
+License: MIT + file LICENSE
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
