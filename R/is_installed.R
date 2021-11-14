@@ -1,6 +1,6 @@
 #' Check if a package is installed (in the terminal)
 #'
-#' #' `r lifecycle::badge("experimental")`
+#' `r lifecycle::badge("experimental")`
 #'
 #' @param pkg Character indicating the package to search.
 #'
