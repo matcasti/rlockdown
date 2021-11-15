@@ -3,4 +3,4 @@
 export(is_installed)
 export(protect_html)
 importFrom(lifecycle,deprecated)
-importFrom(packer,npm_install)
+importFrom(processx,run)

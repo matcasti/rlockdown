@@ -24,11 +24,11 @@ protect_html(html, password, output = NULL, title = NULL, instructions = NULL)
 Add a layer of protection to your HTML files. \code{protect_html()}
 adds a password request layer before entering the final html file.
 }
-\section{About the algorith}{
+\section{About the algorithm}{
 
 
 This uses under the hood the package staticrypt (\href{https://github.com/robinmoisson/staticrypt}{see GitHub repo}),
 from \href{https://github.com/robinmoisson}{Robin Moisson}. For extra documentation about the JavaScript code see the
-\href{https://github.com/robinmoisson}{repository} from his GitHub
+\href{https://github.com/robinmoisson}{repository} from his GitHub.
 }
 

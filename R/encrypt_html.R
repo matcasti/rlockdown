@@ -12,53 +12,62 @@
 #' @param title Title for the password box.
 #' @param instructions Instructions for end user. Could be guidelines related to the password it self.
 #'
-#' @importFrom packer npm_install
+#' @importFrom processx run
 #'
-#' @section About the algorith:
+#' @section About the algorithm:
 #'
 #' This uses under the hood the package staticrypt ([see GitHub repo](https://github.com/robinmoisson/staticrypt)),
 #' from [Robin Moisson](https://github.com/robinmoisson). For extra documentation about the JavaScript code see the
-#' [repository](https://github.com/robinmoisson) from his GitHub
+#' [repository](https://github.com/robinmoisson) from his GitHub.
 #'
 #' @export
 
 protect_html <- function(html, password, output = NULL, title = NULL, instructions = NULL) {
 
+
   if (missing(html)) stop("`html` MUST be specified", call. = FALSE)
   if (missing(password)) stop("`password` MUST be specified", call. = FALSE)
 
-  ## Check if file exist
+
   if (!file.exists(html)) stop("`html` MUST be a valid file path", call. = FALSE)
 
-  ## Check if staticrypt is installed, if not it can be installed using npm
+
   if (!is_installed("staticrypt")) {
+
+    ## Instalamos staticrypt, generando sus dependencias
     warning("staticrypt will be installed", call. = FALSE)
-    packer::npm_install("staticrypt")
+    processx::run(
+      command = "npm",
+      args = c("install", "staticrypt")
+    )
   }
 
-  html <- paste0("\"", html, "\"")
+  html <- fs::path_abs(html)
 
   ## Make call for terminal
-  call <- paste("staticrypt", html, password)
+  call <- paste(html, password)
 
   ## Modify output directory and/or filename
   if (!is.null(output)) {
-    output <- paste0("\"", output, "\"")
-    call <- paste(call, "-o", output)
+    output <- fs::path_abs(output)
+    output <- c("-o", output)
   }
 
   ## Modify output directory and/or filename
   if (!is.null(title)) {
-    title <- paste0("\"", title, "\"")
-    call <- paste(call, "-t", title)
+    title <- c("-t", title)
   }
 
   ## Add instructions to user side
   if (!is.null(instructions)) {
-    instructions <- paste0("\"", instructions, "\"")
-    call <- paste(call, "-i", instructions)
+    instructions <- c("-i", instructions)
   }
 
   ## Run command
-  invisible(x = system(call, intern = TRUE))
+  out <- processx::run(
+    command = "staticrypt",
+    args = c(html, password, output, title, instructions)
+  )
+
+  return(out$status)
 }

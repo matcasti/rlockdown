@@ -5,10 +5,7 @@
 ^cran-comments\.md$
 ^codecov\.yml$
 ^\.github$
-^node_modules$
-^package-lock\.json$
-^package\.json$
-^$
+^inst/npm/node_modules$
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
