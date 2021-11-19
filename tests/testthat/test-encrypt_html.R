@@ -15,21 +15,3 @@ test_that("missing password", {
   )
 })
 
-
-test_that("generates encrypted html", {
-  html_file <- "test.html"
-  html_output <- "test_output.html"
-
-  protect_html(html = html_file,
-               password = 1234,
-               output = html_output,
-               title = "My title",
-               instructions = "My instructions")
-
-  expect_true(
-    object = file.exists(html_output)
-  )
-
-  file.remove(html_output)
-})
-
