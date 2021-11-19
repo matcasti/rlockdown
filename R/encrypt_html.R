@@ -14,7 +14,7 @@
 #'
 #' @importFrom packer npm_install
 #'
-#' @section About the algorith:
+#' @section About the algorithm:
 #'
 #' This uses under the hood the package staticrypt ([see GitHub repo](https://github.com/robinmoisson/staticrypt)),
 #' from [Robin Moisson](https://github.com/robinmoisson). For extra documentation about the JavaScript code see the
