@@ -16,4 +16,5 @@ RoxygenNote: 7.1.2
 URL: https://github.com/matcasti/rlockdown
 BugReports: https://github.com/matcasti/rlockdown/issues
 Imports: 
-    lifecycle
+    lifecycle,
+    packer (>= 0.1.1)
